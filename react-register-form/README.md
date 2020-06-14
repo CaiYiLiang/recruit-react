@@ -51,16 +51,16 @@ In this project, you can find:
 #### Demo
 
 Register card form
-![RegisterCardForm](/src/assets/demo-images/registercardform.png)
+![RegisterCardForm](https://github.com/CaiYiLiang/recruit-react/blob/master/react-register-form/src/assets/demo-images/RegisterCardForm.png)
 
 Field validation in register card form
-![RegitserCardForm-FieldValidate](/src/assets/demo-images/RegitserCardForm-FieldValidate.png)
+![RegitserCardForm-FieldValidate](https://github.com/CaiYiLiang/recruit-react/blob/master/react-register-form/src/assets/demo-images/RegitserCardForm-FieldValidate.png)
 
 Confirm modal in regitser card form
-![RegitserCardForm-Modal](/src/assets/demo-images/RegisterInfoConfrim.png)
+![RegitserCardForm-Modal](https://github.com/CaiYiLiang/recruit-react/blob/master/react-register-form/src/assets/demo-images/RegisterInfoConfrim.png)
 
 Navigation: menu page
-![RegitserCardForm-Modal](/src/assets/demo-images/MenuPage.png)
+![RegitserCardForm-Modal](https://github.com/CaiYiLiang/recruit-react/blob/master/react-register-form/src/assets/demo-images/MenuPage.png)
 
 ### Thoughts
 
