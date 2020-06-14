@@ -1,44 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Register Form
 
-## Available Scripts
+### Run
 
-In the project directory, you can run:
+##### Run the demo locally
 
-### `yarn start`
+- `yarn install`
+- `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### Run tests
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- `yarn test`
 
-### `yarn test`
+##### Tech & Tools
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React, react-router
+- Typescript
+- Styled-components, ant-design ui
+- @testing-library/react, jest
+- Webpack, babel, eslint, yarn, git
 
-### `yarn build`
+### Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In this project, you can find:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+##### Navigation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] Click on burger icon navigates to menu
+- [x] Click on back icon navigates to menu
+- [x] Browser history call back
 
-### `yarn eject`
+##### Inputs
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] Credit card field, cvc field and expire date field
+- [x] Field validation (empty, invalid type)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Submit
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [x] Submit button disbaled until all fields has been filled
+- [x] When submit, form input values would be showed at console log and pop-up modal
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Test
 
-## Learn More
+- [x] Basic test coverage on Menu and RegisterCardForm pages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Others
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] React project skeleton powered with typescript
+- [x] Reusable layout components
+
+#### Demo
+
+Register card form
+![RegisterCardForm](/src/assets/demo-images/registercardform.png)
+
+Field validation in register card form
+![RegitserCardForm-FieldValidate](/src/assets/demo-images/RegitserCardForm-FieldValidate.png)
+
+Confirm modal in regitser card form
+![RegitserCardForm-Modal](/src/assets/demo-images/RegisterInfoConfrim.png)
+
+Navigation: menu page
+![RegitserCardForm-Modal](/src/assets/demo-images/MenuPage.png)
+
+### Thoughts
+
+- When it comes to state management in React, we can use redux, React-hook like useState and useRedux. While we should use them base on the situation, we should be more careful and avoid overusing redux.
+
+- [x] Use redux when the state is shared by many components or pages
+- [x] Use useState when the state is used inside one component or page
+- [x] Use useHook when there is a complate state management inside one component or page, such as one state has dependecies on the other state.
+
+This project was built with [Cherry Liang](https://caiyiliang.github.io/).

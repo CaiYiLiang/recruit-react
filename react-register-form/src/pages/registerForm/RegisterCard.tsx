@@ -74,6 +74,7 @@ const RegisterCard: React.FC = () => {
           {...layout}
           form={form}
           name='register-form'
+          data-testid='register-form'
           onFinish={({ register }) => {
             const { creditCardNo, cvc, expireDate: expireAt } = register;
             const expireDate = expireAt.format('YYYY-MM-DD');
@@ -93,18 +94,19 @@ const RegisterCard: React.FC = () => {
               placeholder='Credit Card No.'
               style={{ width: 'calc(80% - 10px)' }}
               onChange={checkFormErrors}
+              data-testid='credit-card-no'
             />
           </FormItem>
 
           <FormItem name={['register', 'cvc']} label='CVC' rules={[{ required: true, type: 'number' }]}>
-            <InputNumber placeholder='CVC' onChange={checkFormErrors} />
+            <InputNumber placeholder='CVC' onChange={checkFormErrors} data-testid='cvc' />
           </FormItem>
           <FormItem name={['register', 'expireDate']} label='Expire Date' rules={[{ required: true, type: 'object' }]}>
-            <DatePicker onChange={checkFormErrors} />
+            <DatePicker onChange={checkFormErrors} data-testid='expire-date' />
           </FormItem>
 
           <FormItem wrapperCol={{ ...layout.wrapperCol, offset: 5 }}>
-            <Button type='primary' htmlType='submit' disabled={!canSubmit}>
+            <Button type='primary' htmlType='submit' disabled={!canSubmit} data-testid='submit-button'>
               Submit
             </Button>
           </FormItem>

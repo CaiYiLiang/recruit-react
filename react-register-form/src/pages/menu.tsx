@@ -39,7 +39,7 @@ const MenuContainer = styled.div`
   font-size: 2rem;
 `;
 
-const RegisterForm: React.FC = () => (
+const Menu: React.FC = () => (
   <Layout>
     <Header>
       <HeaderContent>
@@ -59,4 +59,4 @@ const RegisterForm: React.FC = () => (
   </Layout>
 );
 
-export default RegisterForm;
+export default Menu;
