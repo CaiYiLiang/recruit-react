@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, InputNumber, Button, DatePicker } from 'antd';
+import { Form, InputNumber, Button, DatePicker, Descriptions } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import COLOR from '../../constants/color';
@@ -18,9 +18,20 @@ const RegisterContainer = styled.div`
   overflow: scroll;
 `;
 
+const InfoContainer = styled.div`
+  padding: 1rem 5rem;
+`;
+
 const GreetText = styled.div`
   font-size: 2rem;
-  margin: 2rem 6rem;
+  margin: 1rem 0;
+`;
+
+const DescriptContainer = styled(Descriptions)`
+  border-radius: 5px;
+  background: ${COLOR.GERY};
+  padding: 0.5rem;
+  width: 60%;
 `;
 
 const FormContainer = styled.div``;
@@ -49,7 +60,8 @@ export type FormValues = {
 const RegisterCard: React.FC = () => {
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
   const [showConfirmModal, setShowConfirmModal] = useState<boolean>(false);
-  const [submitValues, setSubmitValues] = useState<FormValues>();
+  const [submitValues, setSubmitValues] = useState<FormValues | null>(null);
+  const [confirmedValues, setConfirmedValues] = useState<FormValues | null>(null);
   const [form] = Form.useForm();
 
   const checkFormErrors = () => {
@@ -68,7 +80,15 @@ const RegisterCard: React.FC = () => {
 
   return (
     <RegisterContainer>
-      <GreetText>Welcome</GreetText>
+      <InfoContainer>
+        <GreetText>Welcome</GreetText>
+        {confirmedValues && (
+          <DescriptContainer title='Previous submitted value'>
+            <Descriptions.Item label='credit card'>{confirmedValues.register.creditCardNo}</Descriptions.Item>
+            <Descriptions.Item label='expire at'>{confirmedValues.register.expireDate}</Descriptions.Item>
+          </DescriptContainer>
+        )}
+      </InfoContainer>
       <FormContainer>
         <Form
           {...layout}
@@ -116,7 +136,12 @@ const RegisterCard: React.FC = () => {
         <RegisterInfoModal
           registerInfo={submitValues}
           visible={showConfirmModal}
-          onClickOkFn={() => setShowConfirmModal(false)}
+          onClickOkFn={() => {
+            setConfirmedValues(submitValues);
+            form.resetFields();
+            setShowConfirmModal(false);
+          }}
+          onCancelFn={() => setShowConfirmModal(false)}
         />
       )}
     </RegisterContainer>

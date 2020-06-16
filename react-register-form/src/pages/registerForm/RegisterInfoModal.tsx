@@ -22,13 +22,14 @@ type ModalProps = {
   registerInfo: FormValues;
   visible: boolean;
   onClickOkFn: Function;
+  onCancelFn: Function;
 };
 
-const RegisterInfoModal: React.FC<ModalProps> = ({ registerInfo, visible, onClickOkFn }) => {
+const RegisterInfoModal: React.FC<ModalProps> = ({ registerInfo, visible, onClickOkFn, onCancelFn }) => {
   const { creditCardNo, cvc, expireDate } = registerInfo.register;
   return (
     <>
-      <Modal title='Register Confirmation' visible={visible} onOk={() => onClickOkFn()} onCancel={() => onClickOkFn()}>
+      <Modal title='Register Confirmation' visible={visible} onOk={() => onClickOkFn()} onCancel={() => onCancelFn()}>
         <InfoContatiner>
           <InfoWrapper>
             <InfoItemTitle>Credit card no. :</InfoItemTitle>

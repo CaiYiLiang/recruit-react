@@ -38,6 +38,7 @@ In this project, you can find:
 
 - [x] Submit button disbaled until all fields has been filled
 - [x] When submit, form input values would be showed at console log and pop-up modal
+- [x] After submit, read-only registration record would be showed at page
 
 #### Test
 
@@ -58,6 +59,9 @@ Field validation in register card form
 
 Confirm modal in regitser card form
 ![RegitserCardForm-Modal](https://github.com/CaiYiLiang/recruit-react/blob/master/react-register-form/src/assets/demo-images/RegisterInfoConfrim.png)
+
+Previous record of registration
+![RegitserCardForm-record](https://github.com/CaiYiLiang/recruit-react/blob/master/react-register-form/src/assets/demo-images/previousRecord.png)
 
 Navigation: menu page
 ![RegitserCardForm-Modal](https://github.com/CaiYiLiang/recruit-react/blob/master/react-register-form/src/assets/demo-images/MenuPage.png)
